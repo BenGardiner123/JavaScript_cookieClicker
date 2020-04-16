@@ -44,30 +44,39 @@
     padding: 1%;
     border: solid black 1px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    
+}
+
+.half_box{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
 .tools{
-    width: 25%;
+    height: 50%;
+    width: 100%;
     border: solid black 1px;
     background-color: yellow;
 }
 
 .distro{
-    width: 25%;
+    height: 50%;
+    width: 100%;
     border: solid black 1px;
     background-color: green;
 }
 
 .workers{
-    width: 25%;
+    height: 50%;
+    width: 100%;
     border: solid black 1px;
     background-color: red;
 }
 
 .ingredients{
-    width: 25%;
+    height: 50%;
+    width: 100%;
     border: solid black 1px;
     background-color: blue;
 }
