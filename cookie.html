@@ -35,7 +35,7 @@
         </div>
         
         
-        <div class="top_box">      
+        <div class="top_box" id="top_box">      
             
             <a href="#" onclick="cookClick()"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
 
@@ -82,10 +82,12 @@
    function cookClick () {   
        cookieCount++;
        document.getElementById('text').value = cookieCount; 
+       document.getElementByID("top_box").style.backgroundColor = "red";
+       window.setTimeout("yourFunction()",10000);
    }
 
 
-
+   
 </Script>
     
 </body>
