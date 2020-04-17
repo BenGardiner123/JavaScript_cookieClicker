@@ -43,6 +43,10 @@
     color: black;
 }
 
+#counter text{
+    text-align: center;
+}
+
 #other{
     height: 50%;
     width: 100%;
@@ -52,14 +56,24 @@
 }
 
 .top_box{
-    padding: 20%;
+    display: flex;
+    padding: 1%;
     border: solid black 1px;
     width: 40%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
 }
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* remove extra space below image */
+}
+
 
 .uprgades_box{
     width: 40%;
-    padding: 1%;
     border: solid black 1px;
     display: flex;
     
@@ -72,29 +86,45 @@
 }
 
 .tools{
+    display: flex;
+    align-items: center;    
+    justify-content: center;
     height: 50%;
     width: 100%;
     border: solid black 1px;
     background-color: yellow;
+    
 }
 
 .distro{
+    display: flex;
+    align-items: center;    
+    justify-content: center;
     height: 50%;
     width: 100%;
     border: solid black 1px;
     background-color: green;
+    
 }
 
 .workers{
+    display: flex;
+    align-items: center;    
+    justify-content: center;
     height: 50%;
     width: 100%;
     border: solid black 1px;
     background-color: red;
+    
 }
 
 .ingredients{
+    display: flex;
+    align-items: center;    
+    justify-content: center;
     height: 50%;
     width: 100%;
     border: solid black 1px;
     background-color: blue;
+   
 }

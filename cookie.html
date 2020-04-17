@@ -20,7 +20,9 @@
                
 
                     <div id="counter">
-                        counter
+                        <div>You have</div>
+                        <input type="text" id="text"></input>
+                        <div>Cookies</div>
                     </div>
                     
                     <div id="other">
@@ -33,8 +35,10 @@
         </div>
         
         
-        <div class="top_box">
+        <div class="top_box">      
             
+            <a href="#" onclick="cookClick()"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
+
         </div>
 
         <div class="uprgades_box">
@@ -42,10 +46,11 @@
             <div class="half_box">
 
                 <div class="tools">
-
+                    <a href="#" onclick=""><img src="https://i.postimg.cc/B6gN1nWf/rolling-pin-157071-640.png" id="tools" alt="rolling pin"/></a>   
                 </div>
                 
                 <div class="distro">
+                    <a href="#" onclick=""><img src="https://i.postimg.cc/CMnz16bm/color-1293979-640.png" id="truck" alt="truck of a truck"/></a>   
                     
                 </div>
             
@@ -54,11 +59,11 @@
             <div class="half_box">
 
                 <div class="workers">
-
+                    <a href="#" onclick=""><img src="https://i.postimg.cc/PJ0DCgqk/machine-30512-640.png" id="workers" alt="workers using equipment"/></a>   
                 </div>
 
                 <div class="ingredients">
-
+                    <a href="#" onclick=""><img src="https://i.postimg.cc/76F7hvhr/unicorn-3964925-640.png" id="ingredients" alt="unicorn taking a shit in a donut"/></a>   
                 </div>
 
             </div>
@@ -70,6 +75,16 @@
 
 
 <Script  type="text/javascript">
+    
+    var cookieCount = 0;   
+
+//this increments the cookieclicker
+   function cookClick () {   
+       cookieCount++;
+       document.getElementById('text').value = cookieCount; 
+   }
+
+
 
 </Script>
     
