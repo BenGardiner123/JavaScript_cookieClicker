@@ -11,24 +11,35 @@
     <div class="container">
         
         <div class="Lmain_box">
+
             <div class="header">
-                Welcome tothe coolest cookieclicker game ever!
+
+                Dare to click!
+                    
+                    <div id="newsReel">
+                        this is where the news from the clicker game goes
+                    </div>
             </div>
 
             <div class="info">
-                
-               
+    
 
                     <div id="counter">
-                        <div>You have</div>
+                        <p>You have</p>                        
                         <input type="text" id="text"></input>
-                        <div>Cookies</div>
+                        <p>Cookies</p>
                     </div>
                     
                     <div id="other">
-                        other
+                        <Button><a href="#" onclick="upgradeTools()"></a>Upgrade tools </Button>
+                        <p id="costTools">Cost 0 Cookies</p><p>You own </p>
+                        <Button><a href="#" onclick="upgradeWorkers()"></a>Upgrade workers</Button>
+                        <p id="costWorkers">Cost 0 Cookies</p>
+                        <Button><a href="#" onclick="upgradeDistro()"></a>Upgrade Distribution</Button>
+                        <p id="costDistro">Cost 0 Cookies</p>
+                        <Button ><a href="#" onclick="upgradeIng()"></a>Upgrade ingredients</Button>
+                        <p id="costIng">Cost 0 Cookies</p>
                     </div>
-                
             
                 
             </div>
@@ -37,7 +48,7 @@
         
         <div class="top_box" id="top_box">      
             
-            <a href="#" onclick="cookClick()"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
+            <a href="#" onclick="cookClick();cookClick1"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
 
         </div>
 
@@ -75,19 +86,39 @@
 
 
 <Script  type="text/javascript">
-    
+    var autoClick = 0;
     var cookieCount = 0;   
+
+    function update() {
+        document.getElementById('text').value = cookieCount;
+    }
+
+    function timer (){
+        cookieCount = cookieCount + autoClick;
+        update()
+    }
+    setInterval(timer, 1000);
 
 //this increments the cookieclicker
    function cookClick () {   
        cookieCount++;
-       document.getElementById('text').value = cookieCount; 
-       document.getElementByID("top_box").style.backgroundColor = "red";
-       window.setTimeout("yourFunction()",10000);
+       update(); 
+     
    }
+ //not sure how tomake this work properly..   
+    function cookClick1 () {
+    document.getElementsByClassName("top_box").style.backgroundColor = "red";
+    window.setTimeout("cookClick1()",500);
+    }
 
+    function autoClicker(){
+        if (cookieCount >= ((autoClick+1) * 12 )) {
+            cookieCount = cookieCount - ((autoClick+1) * 12);
+            autoClick = autoClick + 1;
+        }
 
-   
+    }
+
 </Script>
     
 </body>
