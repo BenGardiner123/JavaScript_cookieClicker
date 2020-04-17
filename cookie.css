@@ -75,7 +75,7 @@ p {
 }
 
 .top_box{
-    animation: pulse 1s infinite;
+    /*animation: pulse 1s infinite;*/
     display: flex;
     padding: 1%;
     border: solid black 1px;
@@ -83,9 +83,10 @@ p {
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center;
+    background-color: violet;
 }
 
-@keyframes pulse {
+/*@keyframes pulse {
     0% {
       background-color: rgb(29, 4, 143);
     }
@@ -93,6 +94,7 @@ p {
       background-color: rgb(7, 130, 179);
     }
   }
+  */
   
 
 img{

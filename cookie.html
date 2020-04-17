@@ -32,13 +32,13 @@
                     
                     <div id="other">
                         <Button><a href="#" onclick="upgradeTools()"></a>Upgrade tools </Button>
-                        <p id="costTools">Cost 0 Cookies</p><p>You own </p>
+                        <p id="costTools">Cost 0 Cookies</p><p id="amntTools"></p>
                         <Button><a href="#" onclick="upgradeWorkers()"></a>Upgrade workers</Button>
-                        <p id="costWorkers">Cost 0 Cookies</p>
+                        <p id="costWorkers">Cost 0 Cookies</p><p id="amntWorkers"></p>
                         <Button><a href="#" onclick="upgradeDistro()"></a>Upgrade Distribution</Button>
-                        <p id="costDistro">Cost 0 Cookies</p>
+                        <p id="costDistro">Cost 0 Cookies</p><p id="amntDistro"></p>
                         <Button ><a href="#" onclick="upgradeIng()"></a>Upgrade ingredients</Button>
-                        <p id="costIng">Cost 0 Cookies</p>
+                        <p id="costIng">Cost 0 Cookies</p><p id="amntIng"></p>
                     </div>
             
                 
@@ -48,7 +48,7 @@
         
         <div class="top_box" id="top_box">      
             
-            <a href="#" onclick="cookClick();cookClick1"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
+            <a href="#" onclick="cookClick()"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
 
         </div>
 
@@ -88,6 +88,11 @@
 <Script  type="text/javascript">
     var autoClick = 0;
     var cookieCount = 0;   
+    var upgrWorkCount = 0;
+    var upgrToolkCount = 0;
+    var upgrDistroCount = 0;
+    var upgrIngCount = 0;
+
 
     function update() {
         document.getElementById('text').value = cookieCount;
@@ -106,10 +111,10 @@
      
    }
  //not sure how tomake this work properly..   
-    function cookClick1 () {
-    document.getElementsByClassName("top_box").style.backgroundColor = "red";
-    window.setTimeout("cookClick1()",500);
-    }
+   // function cookClick1 () {
+    //document.getElementsByClassName("top_box").style.backgroundColor = "red";
+    //window.setTimeout("cookClick1()",500);
+    
 
     function autoClicker(){
         if (cookieCount >= ((autoClick+1) * 12 )) {
