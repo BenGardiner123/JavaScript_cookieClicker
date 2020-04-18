@@ -31,14 +31,19 @@
                     </div>
                     
                     <div id="other">
-                        <Button><a href="#" onclick="upgradeTools()"></a>Upgrade tools </Button>
-                        <p id="costTools">Cost 0 Cookies</p><p id="amntTools"></p>
-                        <Button><a href="#" onclick="upgradeWorkers()"></a>Upgrade workers</Button>
-                        <p id="costWorkers">Cost 0 Cookies</p><p id="amntWorkers"></p>
-                        <Button><a href="#" onclick="upgradeDistro()"></a>Upgrade Distribution</Button>
-                        <p id="costDistro">Cost 0 Cookies</p><p id="amntDistro"></p>
-                        <Button ><a href="#" onclick="upgradeIng()"></a>Upgrade ingredients</Button>
-                        <p id="costIng">Cost 0 Cookies</p><p id="amntIng"></p>
+                        
+                        <button onclick="upgradeTools();"><a></a>Upgrade tools </button>
+                        <p id="costTools"></p><p id="amntTools"></p>
+                        
+                        <button onclick="upgradeWorkers();"><a></a>Upgrade workers</button>
+                        <p id="costWorkers"></p><p id="amntWorkers"></p>
+                        
+                        <button onclick="upgradeDistro();"><a></a>Upgrade Distribution</button>
+                        <p id="costDistro"></p><p id="amntDistro"></p>
+                        
+                        <button onclick="upgradeIng();"><a></a>Upgrade ingredients</button>
+                        <p id="costIng"></p><p id="amntIng"></p>
+
                     </div>
             
                 
@@ -48,7 +53,7 @@
         
         <div class="top_box" id="top_box">      
             
-            <a href="#" onclick="cookClick()"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
+            <a href="#" onclick="cookClick();"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
 
         </div>
 
@@ -86,40 +91,83 @@
 
 
 <Script  type="text/javascript">
-    var autoClick = 0;
+    
     var cookieCount = 0;   
     var upgrWorkCount = 0;
-    var upgrToolkCount = 0;
+    var upgrToolCount = 0;
     var upgrDistroCount = 0;
     var upgrIngCount = 0;
 
 
     function update() {
+        //update the counter box
         document.getElementById('text').value = cookieCount;
+
+        //updates to the uprgade box
+        document.getElementById('amntTools').innerHTML = "You own " + upgrToolCount + "Tool upgrades" ;
+        document.getElementById('amntWorkers').innerHTML = "You own " + upgrWorkCount + "Worker upgrades" ;
+        document.getElementById('amntDistro').innerHTML = "You own " + upgrDistroCount + "Distro upgrades" ;
+        document.getElementById('amntIng').innerHTML = "You own " + upgrIngCount + " Ingredient upgrades" ;
+
+        //update to the cost of upgrade box
+        document.getElementById('costTools').innerHTML = ((upgrToolCount + 1) * 12) + " Cookies"
     }
 
     function timer (){
-        cookieCount = cookieCount + autoClick;
+        cookieCount = cookieCount + upgrToolCount;
         update()
     }
     setInterval(timer, 1000);
 
-//this increments the cookieclicker
-   function cookClick () {   
+    //this increments the cookieclicker
+    function cookClick () {   
        cookieCount++;
        update(); 
      
    }
- //not sure how tomake this work properly..   
-   // function cookClick1 () {
+    
+    //not sure how to make this work properly..   
+    // function cookClick1 () {
     //document.getElementsByClassName("top_box").style.backgroundColor = "red";
     //window.setTimeout("cookClick1()",500);
     
+    
+    function upgradeTools(){
+        
+        if (cookieCount >= ((upgrToolCount+1) * 12 )) {
+            cookieCount = cookieCount - ((upgrToolCount+1) * 12);
+            upgrToolCount = upgrToolCount + 1;
+            update()
+        }
+        
+    }
+    
+    
+    function upgradeWorkers(){
+        if (cookieCount >= ((upgrWorkCount+1) * 50 )) {
+            cookieCount = cookieCount - ((upgrWorkCount+1) * 50);
+            upgrWorkCount = upgrWorkCount + 1;
+            update()
+        }
 
-    function autoClicker(){
-        if (cookieCount >= ((autoClick+1) * 12 )) {
-            cookieCount = cookieCount - ((autoClick+1) * 12);
-            autoClick = autoClick + 1;
+    }
+
+    
+    function upgradeDistro(){
+        if (cookieCount >= ((upgrDistroCount+1) * 400 )) {
+            cookieCount = cookieCount - ((upgrDistroCount+1) * 400);
+            upgrDistroCount = upgrDistroCount + 1;
+            update()
+        }
+
+    }
+
+    
+    function upgradeIng(){
+        if (cookieCount >= ((upgrIngCount+1) * 2000 )) {
+            cookieCount = cookieCount - ((upgrIngCount+1) * 2000);
+            upgrIngCount = upgrIngCount + 1;
+            update()
         }
 
     }
