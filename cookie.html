@@ -104,14 +104,24 @@
         document.getElementById('text').value = cookieCount;
 
         //updates to the uprgade box
-        document.getElementById('amntTools').innerHTML = "You own " + upgrToolCount + "Tool upgrades" ;
-        document.getElementById('amntWorkers').innerHTML = "You own " + upgrWorkCount + "Worker upgrades" ;
-        document.getElementById('amntDistro').innerHTML = "You own " + upgrDistroCount + "Distro upgrades" ;
+        document.getElementById('amntTools').innerHTML = "You own " + upgrToolCount + " Tool upgrades" ;
+
+        document.getElementById('amntWorkers').innerHTML = "You own " + upgrWorkCount + " Worker upgrades" ;
+        
+        document.getElementById('amntDistro').innerHTML = "You own " + upgrDistroCount + " Distro upgrades" ;
+
         document.getElementById('amntIng').innerHTML = "You own " + upgrIngCount + " Ingredient upgrades" ;
 
         //update to the cost of upgrade box
-        document.getElementById('costTools').innerHTML = ((upgrToolCount + 1) * 12) + " Cookies"
+        document.getElementById('costTools').innerHTML = ((upgrToolCount + 1) * 12) + " Cookies is the price for your next upgrade"
+
+        document.getElementById('costWorkers').innerHTML = ((upgrWorkCount + 1) * 50) + " Cookies is the price for your next upgrade"
+
+        document.getElementById('costDistro').innerHTML = ((upgrDistroCount + 1) * 12) + " Cookies is the price for your next upgrade"
+
+        document.getElementById('costIng').innerHTML = ((upgrIngCount + 1) * 12) + " Cookies is the price for your next upgrade"
     }
+
 
     function timer (){
         cookieCount = cookieCount + upgrToolCount;
@@ -142,7 +152,6 @@
         
     }
     
-    
     function upgradeWorkers(){
         if (cookieCount >= ((upgrWorkCount+1) * 50 )) {
             cookieCount = cookieCount - ((upgrWorkCount+1) * 50);
@@ -152,7 +161,6 @@
 
     }
 
-    
     function upgradeDistro(){
         if (cookieCount >= ((upgrDistroCount+1) * 400 )) {
             cookieCount = cookieCount - ((upgrDistroCount+1) * 400);
@@ -162,7 +170,6 @@
 
     }
 
-    
     function upgradeIng(){
         if (cookieCount >= ((upgrIngCount+1) * 2000 )) {
             cookieCount = cookieCount - ((upgrIngCount+1) * 2000);
