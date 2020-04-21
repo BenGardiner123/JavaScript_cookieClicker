@@ -28,6 +28,7 @@
                         <p>You have</p>                        
                         <input type="text" id="text"></input>
                         <p>Cookies</p>
+                        <div id="cookpersec">Current rate is 0 Cookies per second</div>
                     </div>
                     
                     <div id="other">
@@ -53,7 +54,7 @@
         
         <div class="top_box" id="top_box"> 
             
-            <div id="cookpersec">Current rate is 0 Cookies per second</div>
+            
             
             <a href="#" onclick="cookClick();"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
 
@@ -99,7 +100,7 @@
     var upgrToolCount = 0;
     var upgrDistroCount = 0;
     var upgrIngCount = 0;
-
+    var multiplier = 1;
 
     function update() {
         //update the cookies per second
@@ -122,9 +123,9 @@
 
         document.getElementById('costWorkers').innerHTML = ((upgrWorkCount + 1) * 50) + " Cookies is the price for your next upgrade"
 
-        document.getElementById('costDistro').innerHTML = ((upgrDistroCount + 1) * 12) + " Cookies is the price for your next upgrade"
+        document.getElementById('costDistro').innerHTML = ((upgrDistroCount + 1) * 400) + " Cookies is the price for your next upgrade"
 
-        document.getElementById('costIng').innerHTML = ((upgrIngCount + 1) * 12) + " Cookies is the price for your next upgrade"
+        document.getElementById('costIng').innerHTML = ((upgrIngCount + 1) * 2000) + " Cookies is the price for your next upgrade"
     }
 
 
