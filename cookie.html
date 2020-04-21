@@ -51,7 +51,9 @@
         </div>
         
         
-        <div class="top_box" id="top_box">      
+        <div class="top_box" id="top_box"> 
+            
+            <div id="cookpersec">Current rate is 0 Cookies per second</div>
             
             <a href="#" onclick="cookClick();"><img src="https://i.postimg.cc/G2kPvSvw/cookie-154366-640.png" id="cookie" alt="picture of a cookie"/></a>   
 
@@ -100,6 +102,9 @@
 
 
     function update() {
+        //update the cookies per second
+        document.getElementById("cookpersec").innerHTML = "Current rate is" + ((((upgrToolCount)+(upgrWorkCount*2)+(upgrDistroCount*4)+(upgrIngCount*8))*multiplier)) +"Cookies per second"
+
         //update the counter box
         document.getElementById('text').value = cookieCount;
 
@@ -125,6 +130,9 @@
 
     function timer (){
         cookieCount = cookieCount + upgrToolCount;
+        cookieCount = cookieCount + upgrWorkCount * 2;
+        cookieCount = cookieCount + upgrDistroCount * 4;
+        cookieCount = cookieCount + upgrIngCount * 8;
         update()
     }
     setInterval(timer, 1000);
