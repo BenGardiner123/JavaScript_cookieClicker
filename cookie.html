@@ -16,8 +16,8 @@
 
                 Dare to click!
                     
-                    <div id="newsReel">
-                        this is where the news from the clicker game goes
+                    <div id="news">
+                        <h5 id="newsReel">is where the news from the clicker game goes</h5>
                     </div>
             </div>
 
@@ -65,11 +65,13 @@
             <div class="half_box">
 
                 <div class="tools">
-                    <a href="#" onclick=""><img src="https://i.postimg.cc/B6gN1nWf/rolling-pin-157071-640.png" id="tools" alt="rolling pin"/></a>   
+                    <div class="upgrinfo">Once you collect enough cookies you can upgrade you tools</div>
+                    <img src="https://i.postimg.cc/B6gN1nWf/rolling-pin-157071-640.png" id="tools" alt="rolling pin"/>
                 </div>
                 
                 <div class="distro">
-                    <a href="#" onclick=""><img src="https://i.postimg.cc/CMnz16bm/color-1293979-640.png" id="truck" alt="truck of a truck"/></a>   
+                    <div class="upgrinfo">Once you collect enough cookies you can upgrade your distribution network</div>
+                    <img src="https://i.postimg.cc/CMnz16bm/color-1293979-640.png" id="truck" alt="truck of a truck"/>
                     
                 </div>
             
@@ -78,11 +80,13 @@
             <div class="half_box">
 
                 <div class="workers">
-                    <a href="#" onclick=""><img src="https://i.postimg.cc/PJ0DCgqk/machine-30512-640.png" id="workers" alt="workers using equipment"/></a>   
+                    <div class="upgrinfo">Once you collect enough cookies you can upgrade your workers to robots</div>
+                    <img src="https://i.postimg.cc/PJ0DCgqk/machine-30512-640.png" id="workers" alt="workers using equipment"/>
                 </div>
 
                 <div class="ingredients">
-                    <a href="#" onclick=""><img src="https://i.postimg.cc/76F7hvhr/unicorn-3964925-640.png" id="ingredients" alt="unicorn taking a shit in a donut"/></a>   
+                    <div class="upgrinfo">Once you collect enough cookies you can upgrade your ingredients</div>
+                    <img src="https://i.postimg.cc/76F7hvhr/unicorn-3964925-640.png" id="ingredients" alt="unicorn taking a shit in a donut"/>
                 </div>
 
             </div>
@@ -104,8 +108,8 @@
 
     function update() {
         //update the cookies per second
-        document.getElementById("cookpersec").innerHTML = "Current rate is " + ((((upgrToolCount)+(upgrWorkCount*2)+(upgrDistroCount*4)+(upgrIngCount*8))*multiplier)) +" Cookies per second"
-
+        document.getElementById("cookpersec").innerHTML = "Current rate is " + ((((upgrToolCount)+(upgrWorkCount*2)+(upgrDistroCount*4)+(upgrIngCount*8))*multiplier)) +" Cookies per second";
+        
         //update the counter box
         document.getElementById('text').value = cookieCount;
 
@@ -141,6 +145,7 @@
     //this increments the cookieclicker
     function cookClick () {   
        cookieCount++;
+       console.log("you clciked a cookie!")
        update(); 
      
    }
@@ -166,11 +171,13 @@
 }
 
     
+    
     function upgradeTools(){
         
         if (cookieCount >= ((upgrToolCount+1) * 12 )) {
             cookieCount = cookieCount - ((upgrToolCount+1) * 12);
             upgrToolCount = upgrToolCount + 1;
+            console.log("you upgraded your tools!")
             update()
         }
         
@@ -180,6 +187,7 @@
         if (cookieCount >= ((upgrWorkCount+1) * 50 )) {
             cookieCount = cookieCount - ((upgrWorkCount+1) * 50);
             upgrWorkCount = upgrWorkCount + 1;
+            console.log("you upgraded your workers you devil!")
             update()
         }
 
@@ -189,6 +197,7 @@
         if (cookieCount >= ((upgrDistroCount+1) * 400 )) {
             cookieCount = cookieCount - ((upgrDistroCount+1) * 400);
             upgrDistroCount = upgrDistroCount + 1;
+            console.log("you upgraded your Distribution network to a fleet of flying monkeys!")
             update()
         }
 
@@ -198,6 +207,7 @@
         if (cookieCount >= ((upgrIngCount+1) * 2000 )) {
             cookieCount = cookieCount - ((upgrIngCount+1) * 2000);
             upgrIngCount = upgrIngCount + 1;
+            console.log("you upgraded your ingredients using a unicorn!")
             update()
         }
 
