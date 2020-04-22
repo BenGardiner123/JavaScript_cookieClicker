@@ -30,7 +30,7 @@ p {
     font-size: 25px;
     color: white;
     border: solid black 1px;
-    height: 50%;
+    height: 30%;
     justify-content: center; /* align horizontal */
     align-items: center;
     background-color: tomato;
@@ -47,13 +47,13 @@ p {
     flex-direction: column;
     padding: 1%;
     border: solid black 1px;
-    height: 50%;
+    height: 70%;
 }
 
 #counter{
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: 25%;
     width: 100%;
     border: solid black 1px;
     background-color:yellow;
@@ -67,10 +67,10 @@ p {
 }
 
 #other{
-    height: 50%;
+    height: 75%;
     width: 100%;
     border: solid black 1px;
-    background-color:palevioletred;
+    background-color:white;
     color: black;
 }
 
@@ -83,7 +83,7 @@ p {
     width: 40%;
     justify-content: center; /* align horizontal */
     align-items: center;
-    background-color: violet;
+    background-color: blue;
 }
 
 /*@keyframes pulse {
@@ -163,4 +163,26 @@ img{
     border: solid black 1px;
     background-color: blue;
    
+}
+
+#amntTools{
+    color: purple;
+    border: solid  red 1px ;
+}
+#amntWorkers{
+    color: purple;
+    border: solid  red 1px ;
+}
+#amntDistro{
+    color: purple;
+    border: solid  red 1px ;
+}
+#amntIng{
+    color: purple;
+    border: solid  red 1px ;
+}
+
+button{
+    background-color: grey;
+    color:white;
 }

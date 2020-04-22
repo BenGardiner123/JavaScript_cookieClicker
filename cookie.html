@@ -104,7 +104,7 @@
 
     function update() {
         //update the cookies per second
-        document.getElementById("cookpersec").innerHTML = "Current rate is" + ((((upgrToolCount)+(upgrWorkCount*2)+(upgrDistroCount*4)+(upgrIngCount*8))*multiplier)) +"Cookies per second"
+        document.getElementById("cookpersec").innerHTML = "Current rate is " + ((((upgrToolCount)+(upgrWorkCount*2)+(upgrDistroCount*4)+(upgrIngCount*8))*multiplier)) +" Cookies per second"
 
         //update the counter box
         document.getElementById('text').value = cookieCount;
@@ -128,7 +128,7 @@
         document.getElementById('costIng').innerHTML = ((upgrIngCount + 1) * 2000) + " Cookies is the price for your next upgrade"
     }
 
-
+    //update the counter
     function timer (){
         cookieCount = cookieCount + upgrToolCount;
         cookieCount = cookieCount + upgrWorkCount * 2;
@@ -144,12 +144,27 @@
        update(); 
      
    }
+   //get the bacground  
+    let getbackgr = document.getElementById("cookie")
+    let changebackgr = document.getElementById("top_box")
+    let curColor = document.getElementById("top_box").style.backgroundColor
+    var isColor = false;
     
-    //not sure how to make this work properly..   
-    // function cookClick1 () {
-    //document.getElementsByClassName("top_box").style.backgroundColor = "red";
-    //window.setTimeout("cookClick1()",500);
+   //make it listen for the click
+    getbackgr.addEventListener("click", backflash)
     
+    //this toggles the colors backand forth..
+    function backflash(){
+    if (isColor){
+        changebackgr.style.backgroundColor = 'purple';
+        isColor = false;
+    }
+    else {
+        changebackgr.style.backgroundColor = 'yellow';
+        isColor = true;
+    }
+}
+
     
     function upgradeTools(){
         
